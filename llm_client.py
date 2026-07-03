@@ -1,4 +1,3 @@
-
 from typing import Optional, Type, TypeVar
 
 from pydantic import BaseModel
