@@ -8,7 +8,7 @@
       "game_theory"
     ],
     "answer_format": "Each problem has a canonical `answer` plus `acceptable_answers` (equivalent forms the checker treats as correct). The `notes` field shows the derivation for re-verification.",
-    "count": 10
+    "count": 18
   },
   "problems": [
     {
@@ -80,6 +80,62 @@
       "question": "A projectile is launched at 45 degrees with an initial speed of 20 m/s on level ground. Using g = 9.8 m/s^2 and ignoring air resistance, what is its horizontal range in meters (round to one decimal place)?",
       "answer": "40.8",
       "notes": "R = v^2 * sin(2*theta) / g = 400 * sin(90) / 9.8 = 400/9.8 = 40.816 m."
+    },
+    {
+      "id": "P11",
+      "category": "physics",
+      "question": "A uniform ladder leans against a frictionless vertical wall, making a 60-degree angle with the horizontal ground. What is the minimum coefficient of static friction between the ladder and the ground needed to prevent slipping (round to three decimals)?",
+      "answer": "0.289",
+      "notes": "Torque + force balance give mu_min = 1/(2 tan(theta)) = 1/(2 tan 60) = 1/(2*1.732) = 0.2887."
+    },
+    {
+      "id": "P12",
+      "category": "physics",
+      "question": "A block slides down a frictionless incline angled at 30 degrees to the horizontal. Using g = 9.8 m/s^2, what is the magnitude of its acceleration in m/s^2?",
+      "answer": "4.9",
+      "notes": "a = g * sin(30) = 9.8 * 0.5 = 4.9 m/s^2."
+    },
+    {
+      "id": "P13",
+      "category": "physics",
+      "question": "A 12 V battery is connected across a 4 ohm resistor. What is the power dissipated by the resistor in watts?",
+      "answer": "36",
+      "notes": "P = V^2 / R = 12^2 / 4 = 144/4 = 36 W."
+    },
+    {
+      "id": "P14",
+      "category": "physics",
+      "question": "A 1000 kg car travels at 20 m/s. What is its kinetic energy in joules?",
+      "answer": "200000",
+      "notes": "KE = 0.5 * m * v^2 = 0.5 * 1000 * 20^2 = 200000 J."
+    },
+    {
+      "id": "P15",
+      "category": "logic_puzzle",
+      "question": "On an island every inhabitant is either a knight (always tells the truth) or a knave (always lies). Person A says: 'A and B are both knaves.' Determine what A is and what B is.",
+      "answer": "A is a knave and B is a knight",
+      "notes": "If A were a knight, the statement would be true, making A a knave -> contradiction. So A is a knave; the statement is false, so they are NOT both knaves, so B is a knight."
+    },
+    {
+      "id": "P16",
+      "category": "logic_puzzle",
+      "question": "In the classic Zebra/Einstein puzzle (five houses in a row, each a different color, with owners of different nationalities, drinks, cigarette brands, and pets), the well-known question is: who owns the fish? Give the nationality.",
+      "answer": "the German",
+      "notes": "Canonical unique solution of the standard Einstein zebra puzzle: the German owns the fish."
+    },
+    {
+      "id": "P17",
+      "category": "logic_puzzle",
+      "question": "You have two ropes. Each takes exactly 60 minutes to burn from one end to the other, but they burn at a non-uniform rate. Using only these ropes and a lighter, and the standard trick of lighting a rope at both ends, what time interval (less than 60 minutes) can you measure? Give the number of minutes.",
+      "answer": "45",
+      "notes": "Light rope1 at both ends and rope2 at one end. Rope1 finishes at 30 min; then light rope2's other end; rope2 finishes at 45 min."
+    },
+    {
+      "id": "P18",
+      "category": "logic_puzzle",
+      "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost, in dollars?",
+      "answer": "0.05",
+      "notes": "ball + (ball + 1.00) = 1.10 -> 2*ball = 0.10 -> ball = 0.05."
     }
   ]
 }
