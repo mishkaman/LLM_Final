@@ -1,16 +1,3 @@
-"""Central configuration for the Multi-LLM Collaborative Debate System.
-
-Design notes
-------------
-Everything tunable lives in this one module so the rest of the codebase can stay
-declarative: no other file reads ``os.getenv`` directly. Values are resolved once
-at import time from the environment (``.env`` via python-dotenv) and then treated
-as read-only constants everywhere downstream.
-
-Why a single model for four roles: the assignment explicitly permits driving all
-four agents with one model, differentiated only by system prompt and temperature.
-That keeps the project runnable on a single free-tier key.
-"""
 import os
 from typing import Dict
 
@@ -19,22 +6,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-# --------------------------------------------------------------------------- #
-# API / model
-# --------------------------------------------------------------------------- #
 OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
 
-# One model plays all four roles (four calls, different personas/params).
 MODEL_NAME: str = os.getenv("MODEL_NAME", "gpt-4o-mini")
 
-# Reasoning models (o-series, gpt-5*) reject the `temperature` parameter. When
-# using one of those, set SUPPORTS_TEMPERATURE=false in .env so we omit it.
 SUPPORTS_TEMPERATURE: bool = os.getenv("SUPPORTS_TEMPERATURE", "true").lower() == "true"
 
 
-# --------------------------------------------------------------------------- #
-# Filesystem paths
-# --------------------------------------------------------------------------- #
 BASE_DIR: str = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR: str = os.path.join(BASE_DIR, "data")
 RESULTS_DIR: str = os.path.join(BASE_DIR, "results")
@@ -46,12 +24,6 @@ os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
 
-# --------------------------------------------------------------------------- #
-# Personas
-# --------------------------------------------------------------------------- #
-# Four agents with deliberately different temperaments. Diversity of reasoning
-# style is the whole point: a rigorous checker and a creative explorer tend to
-# fail on *different* problems, so their disagreement is informative.
 PERSONAS: Dict[str, Dict[str, object]] = {
     "Alpha": {
         "style": "rigorous and methodical; writes every algebraic/logical step "
@@ -75,5 +47,4 @@ PERSONAS: Dict[str, Dict[str, object]] = {
     },
 }
 
-# Fixed ordering used for deterministic tie-breaks in Stage 0.5 role assignment.
 AGENT_ORDER = ["Alpha", "Beta", "Gamma", "Delta"]

@@ -1,13 +1,4 @@
-"""Thin, persona-aware wrapper around the OpenAI Responses API.
 
-Every stage of the debate calls ``structured_call(...)`` with a Pydantic model
-as the response format. Personas differ only by system prompt + temperature,
-which is how one model plays four distinct "agents".
-
-First cut: a single plain call, no retry logic yet. Robustness (backoff on
-transient errors, truncation recovery) is added later once real runs surface
-those failure modes.
-"""
 from typing import Optional, Type, TypeVar
 
 from pydantic import BaseModel
