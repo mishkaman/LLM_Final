@@ -31,7 +31,6 @@ class SolutionError(BaseModel):
 
 
 class PeerReview(BaseModel):
-    """Stage 2 output: one solver's structured critique of one peer solution."""
 
     solution_id: str = Field(description="Which solution this review targets.")
     strengths: List[str]
@@ -58,3 +57,11 @@ class RefinedSolution(BaseModel):
     refined_solution: str
     refined_answer: str = Field(description="Concise final answer after refinement.")
     confidence: float = Field(description="Updated confidence in [0, 1].")
+
+class JudgeDecision(BaseModel):
+    """Stage 4 output: the judge's selection of the winning solver."""
+
+    winner: str = Field(description="One of 'solver_1', 'solver_2', 'solver_3'.")
+    final_answer: str = Field(description="The winning answer, copied out verbatim.")
+    confidence: float
+    reasoning: str = Field(description="Short (3-4 sentence) justification.")

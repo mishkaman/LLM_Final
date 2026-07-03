@@ -6,7 +6,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-
+# --------------------------------------------------------------------------- #
+# API / model
+# --------------------------------------------------------------------------- #
 OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
 
 MODEL_NAME: str = os.getenv("MODEL_NAME", "gpt-4o-mini")
@@ -23,7 +25,6 @@ METRICS_PATH: str = os.path.join(RESULTS_DIR, "metrics.json")
 
 os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(RESULTS_DIR, exist_ok=True)
-
 
 PERSONAS: Dict[str, Dict[str, object]] = {
     "Alpha": {

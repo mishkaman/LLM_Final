@@ -2,9 +2,8 @@
 
 Kept deliberately separate from orchestration logic so the wording can be
 iterated on (and A/B can tune it independently) without touching the pipeline.
-Persona flavor is injected once via ``_persona_block`` and reused everywhere.
-
-Covers Stages 0-3 for now; the judge prompt is added with the Stage 4 stage.
+Persona flavor is injected once via ``_persona_block`` and reused everywhere, so
+a change to how personas are described propagates to all four stages at once.
 """
 import config
 
@@ -90,4 +89,28 @@ def refiner_user_prompt(question: str, own_solution_text: str, reviews_text: str
         "Output: changes_made (for each critique: the critique, your response, and "
         "accepted=true/false), your refined_solution, a concise refined_answer, and "
         "confidence in [0,1]."
+    )
+
+
+def judge_system_prompt(agent: str) -> str:
+    # NOTE: the "be concise" instruction here was added after a real run in which
+    # the judge rambled, blew past MAX_OUTPUT_TOKENS, and truncated its own JSON.
+    return (
+        f"{_persona_block(agent)}\n\n"
+        "You are the impartial JUDGE. You did not solve the problem yourself. Read all "
+        "three refined solutions (with the original solutions and peer reviews for "
+        "context), reason about which is most likely correct and best-justified, and "
+        "select exactly one winner.\n\n"
+        "Keep your reasoning concise (at most 3-4 sentences). Do NOT restate or copy the "
+        "solutions back; just explain your choice. Put only the short final answer in "
+        "final_answer."
+    )
+
+
+def judge_user_prompt(question: str, dossier_text: str) -> str:
+    return (
+        f"Problem:\n{question}\n\n"
+        f"{dossier_text}\n\n"
+        "Select the winner: one of 'solver_1', 'solver_2', 'solver_3'. Copy the winning "
+        "solution's answer into final_answer. Provide confidence in [0,1] and reasoning."
     )

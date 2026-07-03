@@ -1,3 +1,4 @@
+"""Stage 0 (self-assessment) and Stage 0.5 (deterministic role assignment)."""
 import config
 from schemas import RoleSelfAssessment
 from prompts import role_system_prompt, role_user_prompt
@@ -18,6 +19,12 @@ def collect_self_assessments(question):
 
 
 def assign_roles(assessments):
+    """Stage 0.5: deterministic -> 1 Judge + 3 Solvers.
+
+    Judge = the agent with the largest (judge - solver) confidence margin, i.e.
+    the one that most prefers judging. Ties break by higher judge confidence,
+    then by AGENT_ORDER. Fully deterministic given the same assessments.
+    """
     def judge_key(agent):
         c = assessments[agent].confidence
         # negative index so earlier agents win ties under max()
