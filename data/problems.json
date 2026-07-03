@@ -8,7 +8,7 @@
       "game_theory"
     ],
     "answer_format": "Each problem has a canonical `answer` plus `acceptable_answers` (equivalent forms the checker treats as correct). The `notes` field shows the derivation for re-verification.",
-    "count": 18
+    "count": 25
   },
   "problems": [
     {
@@ -16,6 +16,9 @@
       "category": "math_logic",
       "question": "In how many ways can you tile a 3x8 rectangle with 2x1 dominoes?",
       "answer": "153",
+      "acceptable_answers": [
+        "153"
+      ],
       "notes": "Recurrence a(n)=4a(n-1)-a(n-2) for a 3x2n board; a(0)=1, a(1)=3 -> a(2)=11, a(3)=41, a(4)=153."
     },
     {
@@ -23,6 +26,9 @@
       "category": "math_logic",
       "question": "How many trailing zeros does 100! (100 factorial) have?",
       "answer": "24",
+      "acceptable_answers": [
+        "24"
+      ],
       "notes": "floor(100/5) + floor(100/25) = 20 + 4 = 24."
     },
     {
@@ -30,6 +36,9 @@
       "category": "math_logic",
       "question": "How many positive divisors does 360 have?",
       "answer": "24",
+      "acceptable_answers": [
+        "24"
+      ],
       "notes": "360 = 2^3 * 3^2 * 5 -> (3+1)(2+1)(1+1) = 24."
     },
     {
@@ -37,6 +46,9 @@
       "category": "math_logic",
       "question": "How many distinct arrangements are there of the letters in the word BANANA?",
       "answer": "60",
+      "acceptable_answers": [
+        "60"
+      ],
       "notes": "6! / (3! 2! 1!) = 720 / 12 = 60."
     },
     {
@@ -44,6 +56,12 @@
       "category": "math_logic",
       "question": "A fair six-sided die is rolled twice. What is the probability that the sum of the two rolls equals 7? Give the answer as a simplified fraction.",
       "answer": "1/6",
+      "acceptable_answers": [
+        "1/6",
+        "0.1667",
+        "0.167",
+        "0.16667"
+      ],
       "notes": "6 favorable ordered outcomes out of 36 -> 6/36 = 1/6."
     },
     {
@@ -51,6 +69,12 @@
       "category": "math_logic",
       "question": "In the Monty Hall problem with 3 doors, you pick a door, the host (who knows what is behind the doors) opens a different door revealing a goat, and offers you the chance to switch. What is the probability of winning the car if you switch? Give a simplified fraction.",
       "answer": "2/3",
+      "acceptable_answers": [
+        "2/3",
+        "0.6667",
+        "0.667",
+        "0.66667"
+      ],
       "notes": "Switching wins whenever the initial pick was wrong, which is 2/3 of the time."
     },
     {
@@ -58,6 +82,9 @@
       "category": "math_logic",
       "question": "What is the minimum number of people needed in a room so that the probability of at least two sharing a birthday exceeds 50% (assume 365 equally likely birthdays, ignore leap years)?",
       "answer": "23",
+      "acceptable_answers": [
+        "23"
+      ],
       "notes": "Birthday paradox: at 23 people P(shared) ~ 0.507 > 0.5; at 22 it is ~0.476."
     },
     {
@@ -65,6 +92,10 @@
       "category": "math_logic",
       "question": "What is the sum of all integers from 1 to 100 inclusive?",
       "answer": "5050",
+      "acceptable_answers": [
+        "5050",
+        "5,050"
+      ],
       "notes": "n(n+1)/2 = 100*101/2 = 5050."
     },
     {
@@ -72,6 +103,11 @@
       "category": "physics",
       "question": "An object is dropped from rest. Using g = 9.8 m/s^2 and ignoring air resistance, how far (in meters) does it fall during the first 3 seconds? Give the numeric value in meters.",
       "answer": "44.1",
+      "acceptable_answers": [
+        "44.1",
+        "44.1 m",
+        "44.10"
+      ],
       "notes": "d = 0.5 * g * t^2 = 0.5 * 9.8 * 3^2 = 44.1 m."
     },
     {
@@ -79,6 +115,12 @@
       "category": "physics",
       "question": "A projectile is launched at 45 degrees with an initial speed of 20 m/s on level ground. Using g = 9.8 m/s^2 and ignoring air resistance, what is its horizontal range in meters (round to one decimal place)?",
       "answer": "40.8",
+      "acceptable_answers": [
+        "40.8",
+        "40.8 m",
+        "40.82",
+        "40.816"
+      ],
       "notes": "R = v^2 * sin(2*theta) / g = 400 * sin(90) / 9.8 = 400/9.8 = 40.816 m."
     },
     {
@@ -86,6 +128,11 @@
       "category": "physics",
       "question": "A uniform ladder leans against a frictionless vertical wall, making a 60-degree angle with the horizontal ground. What is the minimum coefficient of static friction between the ladder and the ground needed to prevent slipping (round to three decimals)?",
       "answer": "0.289",
+      "acceptable_answers": [
+        "0.289",
+        "0.29",
+        "0.2887"
+      ],
       "notes": "Torque + force balance give mu_min = 1/(2 tan(theta)) = 1/(2 tan 60) = 1/(2*1.732) = 0.2887."
     },
     {
@@ -93,6 +140,11 @@
       "category": "physics",
       "question": "A block slides down a frictionless incline angled at 30 degrees to the horizontal. Using g = 9.8 m/s^2, what is the magnitude of its acceleration in m/s^2?",
       "answer": "4.9",
+      "acceptable_answers": [
+        "4.9",
+        "4.9 m/s^2",
+        "4.90"
+      ],
       "notes": "a = g * sin(30) = 9.8 * 0.5 = 4.9 m/s^2."
     },
     {
@@ -100,6 +152,11 @@
       "category": "physics",
       "question": "A 12 V battery is connected across a 4 ohm resistor. What is the power dissipated by the resistor in watts?",
       "answer": "36",
+      "acceptable_answers": [
+        "36",
+        "36 W",
+        "36.0"
+      ],
       "notes": "P = V^2 / R = 12^2 / 4 = 144/4 = 36 W."
     },
     {
@@ -107,6 +164,13 @@
       "category": "physics",
       "question": "A 1000 kg car travels at 20 m/s. What is its kinetic energy in joules?",
       "answer": "200000",
+      "acceptable_answers": [
+        "200000",
+        "200,000",
+        "200 kJ",
+        "2e5",
+        "200000 J"
+      ],
       "notes": "KE = 0.5 * m * v^2 = 0.5 * 1000 * 20^2 = 200000 J."
     },
     {
@@ -114,6 +178,12 @@
       "category": "logic_puzzle",
       "question": "On an island every inhabitant is either a knight (always tells the truth) or a knave (always lies). Person A says: 'A and B are both knaves.' Determine what A is and what B is.",
       "answer": "A is a knave and B is a knight",
+      "acceptable_answers": [
+        "A is a knave and B is a knight",
+        "A knave, B knight",
+        "A=knave, B=knight",
+        "A is knave B is knight"
+      ],
       "notes": "If A were a knight, the statement would be true, making A a knave -> contradiction. So A is a knave; the statement is false, so they are NOT both knaves, so B is a knight."
     },
     {
@@ -121,6 +191,11 @@
       "category": "logic_puzzle",
       "question": "In the classic Zebra/Einstein puzzle (five houses in a row, each a different color, with owners of different nationalities, drinks, cigarette brands, and pets), the well-known question is: who owns the fish? Give the nationality.",
       "answer": "the German",
+      "acceptable_answers": [
+        "german",
+        "the german",
+        "germany"
+      ],
       "notes": "Canonical unique solution of the standard Einstein zebra puzzle: the German owns the fish."
     },
     {
@@ -128,6 +203,11 @@
       "category": "logic_puzzle",
       "question": "You have two ropes. Each takes exactly 60 minutes to burn from one end to the other, but they burn at a non-uniform rate. Using only these ropes and a lighter, and the standard trick of lighting a rope at both ends, what time interval (less than 60 minutes) can you measure? Give the number of minutes.",
       "answer": "45",
+      "acceptable_answers": [
+        "45",
+        "45 minutes",
+        "45 min"
+      ],
       "notes": "Light rope1 at both ends and rope2 at one end. Rope1 finishes at 30 min; then light rope2's other end; rope2 finishes at 45 min."
     },
     {
@@ -135,7 +215,107 @@
       "category": "logic_puzzle",
       "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost, in dollars?",
       "answer": "0.05",
+      "acceptable_answers": [
+        "0.05",
+        "$0.05",
+        "5 cents",
+        "0.05 dollars",
+        ".05"
+      ],
       "notes": "ball + (ball + 1.00) = 1.10 -> 2*ball = 0.10 -> ball = 0.05."
+    },
+    {
+      "id": "P19",
+      "category": "logic_puzzle",
+      "question": "There are three light switches outside a closed room, and one incandescent bulb inside. You may flip switches as you like but may enter the room only once. Besides light, what physical property lets you identify a switch that was recently on but is now off?",
+      "answer": "heat (the bulb is warm)",
+      "acceptable_answers": [
+        "heat",
+        "temperature",
+        "warmth",
+        "the bulb is warm",
+        "heat of the bulb"
+      ],
+      "notes": "Turn switch1 on for a few minutes, off; turn switch2 on; enter. Lit -> switch2; off but warm -> switch1; off and cold -> switch3."
+    },
+    {
+      "id": "P20",
+      "category": "logic_puzzle",
+      "question": "Given the premises 'All Razzies are Lazzies' and 'Some Bloops are Razzies', does it logically follow that some Bloops are Lazzies? Answer yes or no.",
+      "answer": "yes",
+      "acceptable_answers": [
+        "yes",
+        "yes it follows",
+        "true"
+      ],
+      "notes": "The Bloops that are Razzies are (by premise 1) Lazzies, so some Bloops are Lazzies. Valid syllogism."
+    },
+    {
+      "id": "P21",
+      "category": "game_theory",
+      "question": "In a sealed-bid second-price (Vickrey) auction, where the highest bidder wins but pays the second-highest bid, what is each bidder's dominant strategy regarding how much to bid relative to their true valuation?",
+      "answer": "bid your true valuation",
+      "acceptable_answers": [
+        "bid your true value",
+        "bid truthfully",
+        "bid your true valuation",
+        "bid exactly your valuation",
+        "truthful bidding"
+      ],
+      "notes": "Truthful bidding is a weakly dominant strategy in a Vickrey auction."
+    },
+    {
+      "id": "P22",
+      "category": "game_theory",
+      "question": "In a single-round Prisoner's Dilemma with standard payoffs, what is the dominant strategy for a rational self-interested player: cooperate or defect?",
+      "answer": "defect",
+      "acceptable_answers": [
+        "defect",
+        "defection",
+        "to defect"
+      ],
+      "notes": "Defect strictly dominates cooperate in the one-shot game."
+    },
+    {
+      "id": "P23",
+      "category": "game_theory",
+      "question": "In the game of Nim with three piles containing 3, 4, and 5 stones (players alternate removing any number of stones from a single pile, and the player who takes the last stone wins), does the first player have a winning strategy? Answer yes or no.",
+      "answer": "yes",
+      "acceptable_answers": [
+        "yes",
+        "first player wins",
+        "yes the first player wins"
+      ],
+      "notes": "Nim-sum 3 XOR 4 XOR 5 = 2 (nonzero) -> first player wins."
+    },
+    {
+      "id": "P24",
+      "category": "game_theory",
+      "question": "In the two-player game of Matching Pennies, what is each player's mixed-strategy Nash equilibrium probability of playing heads?",
+      "answer": "1/2",
+      "acceptable_answers": [
+        "1/2",
+        "0.5",
+        "50%",
+        "50-50",
+        "play heads with probability 1/2"
+      ],
+      "notes": "Unique mixed-strategy NE: each player plays heads with probability 1/2."
+    },
+    {
+      "id": "P25",
+      "category": "game_theory",
+      "question": "In the ultimatum game with a $100 pie divisible into whole dollars, a proposer offers a split and the responder accepts or rejects (rejection gives both nothing). Under the standard subgame-perfect equilibrium with a purely money-maximizing responder, what is the smallest positive amount the proposer can offer the responder, and does the responder accept? Give the offer in dollars and whether it is accepted.",
+      "answer": "offer $1 and the responder accepts",
+      "acceptable_answers": [
+        "1",
+        "$1",
+        "offer 1 dollar and accept",
+        "1 dollar accepted",
+        "offer $1 and the responder accepts",
+        "offer $1 accepted"
+      ],
+      "notes": "SPE: proposer offers the smallest positive unit ($1); a money-maximizing responder accepts any amount > 0."
     }
   ]
 }
