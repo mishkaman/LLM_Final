@@ -1,0 +1,25 @@
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Generated results (keep the folder, ignore heavy run artifacts if desired)
+results/debate_results.json
+results/*.tmp
